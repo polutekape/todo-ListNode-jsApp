@@ -7,7 +7,7 @@ var path = require('path');
 var port = process.env.PORT||8080;
 
 //connect to databa
-var connectionString = "postgres://polutekape:myvuw2017@depot:5432/polutekape_jdbc";
+var connectionString = process.env.DATABASE_URL||"postgres://polutekape:myvuw2017@depot:5432/polutekape_jdbc";
 var client = new pg.Client(connectionString);
 client.connect();
 
@@ -16,10 +16,7 @@ app.use(bodyParser.json());
 //access the directory
 app.use(express.static(path.join(__dirname,'/NWEN304_Project_Part2')))
 
-/*app.get('/', function(req,res){
-    console.log ('something has requested GET\n');
-    res.send('HELLO KAPZ!');
-});*/
+
 
 app.get('/task', function(request, response){
 
