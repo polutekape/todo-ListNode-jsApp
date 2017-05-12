@@ -1,0 +1,26 @@
+var express = require('express');
+var app = express();
+var port = process.env.PORT||8080;
+
+app.get('/', function(req,res){
+    console.log ('something has requested GET\n');
+    res.send('HELLO KAPZ!');
+});
+
+app.post('/post', function (req,res){
+    console.log('shit\n');
+    res.send('Got a POST request');
+});
+
+app.put('/', function (req,res){
+    res.send('Got a PUT request at /user');
+
+});
+
+app.delete('/', function (req, res){
+    res.send('Got a DELETE request at /user');
+});
+
+app.listen(port, function(){
+    console.log('Example app listening on port 8080!');
+});
