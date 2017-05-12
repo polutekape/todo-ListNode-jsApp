@@ -7,6 +7,7 @@ var path = require('path');
 var port = process.env.PORT||8080;
 
 //connect to databa
+//var connectionString = process.env.DATABASE_URL||"postgres://polutekape:myvuw2017@depot:5432/polutekape_jdbc";
 var connectionString = process.env.DATABASE_URL||"postgres://polutekape:myvuw2017@depot:5432/polutekape_jdbc";
 var client = new pg.Client(connectionString);
 client.connect();
